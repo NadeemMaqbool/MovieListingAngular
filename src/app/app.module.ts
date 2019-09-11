@@ -8,12 +8,15 @@ import { MoviesComponent } from './movies/movies.component';
 import { MovieListingComponent } from './movies/movie-listing/movie-listing.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { MovieComponent } from './movies/movie/movie.component';
-import { ShoppingListingComponent } from './shopping-listing/shopping-listing.component';
-import { ShoppingEditComponent } from './shopping-listing/shopping-edit/shopping-edit.component';
+import { ActorListingComponent } from './actors-listing/actor-listing.component';
+import { ActorEditComponent } from './actors-listing/actor-edit/actor-edit.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, MoviesComponent, MovieListingComponent, MovieDetailsComponent, MovieComponent, ShoppingListingComponent, ShoppingEditComponent],
+  declarations: [
+    AppComponent, HeaderComponent, MoviesComponent, MovieListingComponent, MovieDetailsComponent,
+    MovieComponent, ActorListingComponent, ActorEditComponent
+  ],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

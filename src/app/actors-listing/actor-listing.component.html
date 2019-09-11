@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <app-shopping-edit></app-shopping-edit>
+            
+            <div class="list-group">
+                <a href="#" class="list-group-item" style="cursor:pointer;"
+                    *ngFor = "let actor of casts">
+                    {{actor.name}} ({{ actor.noOfmovies }})
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
