@@ -1,1 +1,10 @@
-<p>movie works!</p>
+<a href="#" 
+    class="list-group-item" style="border:none !important;border-bottom:1px solid #ddd !important;border-top:1px solid #ddd !important"
+    (click) = "onSelected()" >
+    <span class="pull-right">
+        <img src="{{movie.imagePath}}" alt="{{movie.title}}" class="img-responsive" style="max-height: 50px;max-width: 80px;">
+    </span>
+    <h3 class="list-group-item-heading"><strong>{{movie.title}}</strong></h3>
+    
+    <p class="list-group-item-text">{{movie.year}}</p>
+</a>

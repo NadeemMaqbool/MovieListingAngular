@@ -8,16 +8,9 @@
 <div class="row">
     <div class="col-md-12">
         <div class="list-group">
-            <a href="#" 
-            class="list-group-item"
-            *ngFor= "let movie of movies" style="border:none !important;border-bottom:1px solid #ddd !important;border-top:1px solid #ddd !important">
-                <span class="pull-right">
-                    <img src="{{movie.imagePath}}" alt="{{movie.title}}" class="img-responsive" style="max-height: 50px;max-width: 80px;">
-                </span>
-                <h3 class="list-group-item-heading"><strong>{{movie.title}}</strong></h3>
-                
-                <p class="list-group-item-text">{{movie.year}}</p>
-            </a>
+           <app-movie *ngFor= "let movieItem of movies"
+           [movie] = "movieItem"
+           (movieSelected) = "onMovieSelected(movieItem)"></app-movie>
         </div>
     </div>
 </div>
