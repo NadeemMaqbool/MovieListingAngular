@@ -6,17 +6,20 @@
                     <div class="row">
                         <div class="col-md-5 form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" />
+                            <input type="text" class="form-control" id="name" #nameInput
+                            />
                         </div>
                         <div class="col-md-2 form-group">
                                 <label for="amount">Amount</label>
-                                <input type="text" class="form-control" id="amount" />    
+                                <input type="text" class="form-control" id="amount" #amountInput/>    
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <button class="btn btn-success" type="submit" style = "margin-right:5px"> Add </button>
-                            <button class="btn btn-danger" type="submit" style = "margin-right:5px"> Delete </button>
+                            <button class="btn btn-success" type="submit" (click)="onAddActor()" style = "margin-right:5px">
+                                  Add </button>
+                            <button class="btn btn-danger" type="submit" (click) = "onDeleteActor(amountInput)" style = "margin-right:5px">
+                                 Delete </button>
                             <button class="btn btn-info" type="button"> Clear </button>
                             
                         </div>

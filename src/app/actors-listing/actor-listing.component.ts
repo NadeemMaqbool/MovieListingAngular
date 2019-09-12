@@ -16,4 +16,8 @@ export class ActorListingComponent implements OnInit {
   ngOnInit() {
   }
 
+  onActorAdded(actor: Casts) {
+    this.casts.push(actor);
+  }
+
 }

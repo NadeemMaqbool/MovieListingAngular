@@ -10,12 +10,12 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
 import { MovieComponent } from './movies/movie/movie.component';
 import { ActorListingComponent } from './actors-listing/actor-listing.component';
 import { ActorEditComponent } from './actors-listing/actor-edit/actor-edit.component';
-
-
+import { DropdownDirective } from './shared/dropdown.directive';
+ 
 @NgModule({
   declarations: [
     AppComponent, HeaderComponent, MoviesComponent, MovieListingComponent, MovieDetailsComponent,
-    MovieComponent, ActorListingComponent, ActorEditComponent
+    MovieComponent, ActorListingComponent, ActorEditComponent, DropdownDirective
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

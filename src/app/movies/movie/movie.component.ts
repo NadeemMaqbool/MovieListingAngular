@@ -7,10 +7,10 @@ import { MovieModel } from '../movie.model'
 })
 export class MovieComponent implements OnInit {
   @Input() movie: MovieModel;
-  @Output() movieSelected =  new EventEmitter<void>();
+  @Output() movieSelected : EventEmitter<void> = new EventEmitter();
   
   constructor() { }
-
+  
   ngOnInit() {
   }
 

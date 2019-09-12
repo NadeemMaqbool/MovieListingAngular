@@ -1,25 +1,53 @@
 <div class="row">
     <div class="col-md-12">
         <div class="thumbnail">
-            <img style="height:350px;" src="http://images6.fanpop.com/image/photos/40000000/Zootopia-Movie-Poster-movie-trailers-40045645-671-404.jpg" alt="...">
+
+            <img src="{{movie.imagePath}}" alt="{{movie.title}}">
+            
             <div class="caption">
-                <h3>Movie Name <small>Realease year 2015</small></h3>
-                <span class="label label-info ml-1" style="margin-left:2px">Comedy</span>
-                <span class="label label-info ml-1" style="margin-left:2px">Anime</span>
-                <span class="label label-info ml-1" style="margin-left:2px">Thriller</span>
-                <hr >  
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua. Massa vitae tortor condimentum lacinia. Aliquam faucibus purus in massa tempor nec feugiat
-                    nisl pretium. Suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse</p>
-                <p>
+                <div class="row" style="margin-bottom:30px;">
+                    <div class="col-md-12">
+                        <div class="col-md-9">
+                                <h3>{{movie.title}} <small>Realease year {{movie.year}}</small></h3>
+                                <span class="label label-info ml-1" style="margin-left:2px">Comedy</span>
+                                <span class="label label-info ml-1" style="margin-left:2px">Anime</span>
+                                <span class="label label-info ml-1" style="margin-left:2px">Thriller</span>
+                                        
+                        </div>
+                        <div class="col-md-3">
+                            <div class="col-md-12 pull-right"appDropdown>
+                                <button class="btn btn-primary dropdown-toggle" 
+                                >
+                                    Manage Post
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Add to Cart</a></li>
+                                    <li><a href="#">Edit</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><strong>Delete</strong></a></li>
+                                </ul>
+                            </div>       
+                        </div>
+                           
+                    </div>
+                     
+                </div>
+               
+                <div class="col-md-12" style="padding:15px">
+                    <div class="wrap">
+                            <span>{{movie.description}}</span>
+                    </div>
+                </div>  
+                    <div class="col-md-12">
+                        <strong>Director: </strong> <span>{{movie.directorName}}</span>
                 
-                <br />
-                <strong>Director: </strong> <span> Mr Director</span>
-                
-                <br />
-                <strong>Cast: </strong> <span> John doe</span>, <span> Michael </span>, <span> Alpha romae</span>
-                    
+                        <br />
+                        <strong>Cast: </strong> {{movie.cast}}
+                        <!-- <span> John doe</span>, <span> Michael </span>, <span> Alpha romae</span> -->
+                </div>             
             </div>
+            
         </div>
     </div>
 </div>
