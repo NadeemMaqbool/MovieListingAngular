@@ -1,21 +1,24 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MovieModel } from '../movie.model'
+import { MovieService } from '../movie.service';
+
 @Component({
   selector: 'app-movie',
   templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.css']
+  styleUrls: ['./movie.component.css'],
 })
+
 export class MovieComponent implements OnInit {
   @Input() movie: MovieModel;
-  @Output() movieSelected : EventEmitter<void> = new EventEmitter();
+  @Input() index: number;
   
-  constructor() { }
+  constructor(private movieService: MovieService) { }
   
   ngOnInit() {
   }
 
   onSelected() {
-    this.movieSelected.emit();
+     this.movieService.movieSelected.emit(this.movie);
   }
 
 }

@@ -11,14 +11,17 @@ import { MovieComponent } from './movies/movie/movie.component';
 import { ActorListingComponent } from './actors-listing/actor-listing.component';
 import { ActorEditComponent } from './actors-listing/actor-edit/actor-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
- 
+import { ActorListingService } from "./actors-listing/actor-listing.service";
+import { AppRoutingComponent } from "./app-routing.component";
+import { MovieStartComponent } from './movies/movie-start/movie-start.component';
+import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
 @NgModule({
   declarations: [
     AppComponent, HeaderComponent, MoviesComponent, MovieListingComponent, MovieDetailsComponent,
-    MovieComponent, ActorListingComponent, ActorEditComponent, DropdownDirective
+    MovieComponent, ActorListingComponent, ActorEditComponent, DropdownDirective, MovieStartComponent, MovieEditComponent
   ],
-  imports: [BrowserModule, FormsModule],
-  providers: [],
+  imports: [BrowserModule, FormsModule, AppRoutingComponent],
+  providers: [ActorListingService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

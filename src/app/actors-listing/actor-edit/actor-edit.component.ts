@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Casts } from "../../shared/casts.model";
+import { ActorListingService } from '../actor-listing.service';
+
 @Component({
   selector: 'app-shopping-edit',
   templateUrl: './actor-edit.component.html',
@@ -8,9 +10,8 @@ import { Casts } from "../../shared/casts.model";
 export class ActorEditComponent implements OnInit {
   @ViewChild('nameInput', {static:false}) nameInputRef: ElementRef;
   @ViewChild('amountInput', {static:false}) amountInputRef: ElementRef
-  @Output() actorAdded = new EventEmitter<Casts>()
   
-  constructor() { }
+  constructor(private actorListingService: ActorListingService) { }
 
   ngOnInit() {
   }
@@ -21,8 +22,7 @@ export class ActorEditComponent implements OnInit {
     const noOfmovies = this.amountInputRef.nativeElement.value;
 
     const newActor = new Casts(name, noOfmovies);
-
-    this.actorAdded.emit(newActor);
+    this.actorListingService.addCast(newActor);
   }
 
 }

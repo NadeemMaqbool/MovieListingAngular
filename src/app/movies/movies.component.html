@@ -1,17 +1,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-5">
-            <app-movie-listing
-            (movieGetSelected) = "selectedMovie = $event"></app-movie-listing>
+            <app-movie-listing></app-movie-listing>
             
         </div>
         <div class="col-md-7">
-            <app-movie-details
-                *ngIf ="selectedMovie; else infoText"
-                  [movie] = "selectedMovie"></app-movie-details>
-                <ng-template #infoText>
-                        <p style="text-align:center"><span>Please select a movie to show</span></p>
-                </ng-template>
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <button class="btn btn-success">+ Add New Movie</button>
+        <button class="btn btn-success" (click)="onAddMovie()">+ Add New Movie</button>
     </div>
 </div>
 
@@ -8,9 +8,10 @@
 <div class="row">
     <div class="col-md-12">
         <div class="list-group">
-           <app-movie *ngFor= "let movieItem of movies"
+           <app-movie 
+           *ngFor= "let movieItem of movies;let i=index"
            [movie] = "movieItem"
-           (movieSelected) = "onMovieSelected(movieItem)"></app-movie>
+           [index] = "i"></app-movie>
         </div>
     </div>
 </div>

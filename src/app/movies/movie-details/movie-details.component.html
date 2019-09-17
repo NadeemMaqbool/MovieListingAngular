@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row border-dark border-success" >
     <div class="col-md-12">
         <div class="thumbnail">
 
@@ -8,10 +8,9 @@
                 <div class="row" style="margin-bottom:30px;">
                     <div class="col-md-12">
                         <div class="col-md-9">
-                                <h3>{{movie.title}} <small>Realease year {{movie.year}}</small></h3>
-                                <span class="label label-info ml-1" style="margin-left:2px">Comedy</span>
-                                <span class="label label-info ml-1" style="margin-left:2px">Anime</span>
-                                <span class="label label-info ml-1" style="margin-left:2px">Thriller</span>
+                            <h3>{{movie.title}} <small>Realease year {{movie.year}}</small></h3>
+                            <span class="label label-info ml-1" style="margin-left:2px" 
+                                    *ngFor="let g of movie.genre">{{ g }}</span>
                                         
                         </div>
                         <div class="col-md-3">
@@ -22,10 +21,10 @@
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="#">Add to Cart</a></li>
-                                    <li><a href="#">Edit</a></li>
+                                    <li style="cursor: pointer"><a >Add to Cart</a></li>
+                                    <li style="cursor: pointer" (click) = "onEditMovie()"><a >Edit</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#"><strong>Delete</strong></a></li>
+                                    <li style="cursor: pointer"><a ><strong>Delete</strong></a></li>
                                 </ul>
                             </div>       
                         </div>
@@ -43,9 +42,10 @@
                         <strong>Director: </strong> <span>{{movie.directorName}}</span>
                 
                         <br />
-                        <strong>Cast: </strong> {{movie.cast}}
-                        <!-- <span> John doe</span>, <span> Michael </span>, <span> Alpha romae</span> -->
-                </div>             
+                        <strong>Cast: </strong> <span *ngFor="let actor of movie.casts">
+                            {{ actor.name }},
+                        </span>
+                    </div>             
             </div>
             
         </div>

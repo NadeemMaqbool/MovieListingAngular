@@ -1,6 +1,8 @@
-<a href="#" 
-    class="list-group-item" style="border:none !important;border-bottom:1px solid #ddd !important;border-top:1px solid #ddd !important"
-    (click) = "onSelected()" >
+<a 
+    [routerLink] = "[index]"
+    routerLinkActive="active"
+    class="list-group-item" 
+    style="cursor:pointer;border:none !important;border-bottom:1px solid #ddd !important;border-top:1px solid #ddd !important" >
     <span class="pull-right">
         <img src="{{movie.imagePath}}" alt="{{movie.title}}" class="img-responsive" style="max-height: 50px;max-width: 80px;">
     </span>

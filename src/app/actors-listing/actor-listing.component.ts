@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Casts } from '../shared/casts.model'
+import { Casts } from '../shared/casts.model';
+import { ActorListingService } from './actor-listing.service';
+
 @Component({
   selector: 'app-shopping-listing',
   templateUrl: './actor-listing.component.html',
@@ -7,17 +9,15 @@ import { Casts } from '../shared/casts.model'
 })
 export class ActorListingComponent implements OnInit {
 
-  casts: Casts[] = [
-    new Casts('Heath Ledger',2),
-    new Casts('Johny depp',1)
-  ];
-  constructor() { }
+  casts: Casts[];
+  constructor(private actorListingService: ActorListingService) { }
 
   ngOnInit() {
+    this.casts = this.actorListingService.getCasts();
+    this.actorListingService.castChanged.subscribe((cast: Casts[]) => {
+      this.casts = cast;
+    })
   }
 
-  onActorAdded(actor: Casts) {
-    this.casts.push(actor);
-  }
 
 }
