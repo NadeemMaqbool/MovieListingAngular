@@ -1,8 +1,10 @@
+import { Subject } from "rxjs";
 import { Casts } from '../shared/casts.model'
-import { EventEmitter } from '@angular/core';
+
 
 export class ActorListingService {
-    castChanged = new EventEmitter<Casts[]>();
+    castChanged = new Subject<Casts[]>();
+    statedEditing = new Subject<number>();
     private casts: Casts[] = [
         new Casts('Heath Ledger',2),
         new Casts('Johny depp',1)
@@ -14,6 +16,6 @@ export class ActorListingService {
 
     addCast(cast: Casts) {
         this.casts.push(cast)
-        this.castChanged.emit(this.casts.slice());
+        this.castChanged.next(this.casts.slice());
     }
 }
