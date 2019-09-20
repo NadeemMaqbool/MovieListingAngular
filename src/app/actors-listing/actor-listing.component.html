@@ -4,9 +4,9 @@
             <app-shopping-edit></app-shopping-edit>
             
             <div class="list-group">
-                <a href="#" class="list-group-item" style="cursor:pointer;"
+                <a class="list-group-item" style="cursor:pointer;"
                     *ngFor = "let actor of casts; let i=index"
-                    (click)="onEditItem()"
+                    (click)="onEditItem(i)"
                     >
                     {{actor.name}} ({{ actor.noOfmovies }})
                 </a>

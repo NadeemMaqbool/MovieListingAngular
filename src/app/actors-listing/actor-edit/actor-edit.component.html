@@ -27,11 +27,14 @@
                         <div class="col-md-12">
                             <button class="btn btn-success" type="submit" 
                             style = "margin-right:5px"
-                            [disabled]="!form.valid">
-                                  Add </button>
-                            <button class="btn btn-danger" type="submit" (click) = "onDeleteActor(amountInput)" style = "margin-right:5px">
+                            [disabled]="!form.valid" >
+                                  {{ editMode ? "Update" : "Add"}} </button>
+                            <button class="btn btn-danger" type="submit" 
+                            (click) = "onDeleteActor(form)" 
+                            style = "margin-right:5px"
+                            [disabled]="!editMode">
                                  Delete </button>
-                            <button class="btn btn-info" type="button"> Clear </button>
+                            <button class="btn btn-info" type="button" (click)="onClearForm(form)"> Clear </button>
                             
                         </div>
                     </div>
